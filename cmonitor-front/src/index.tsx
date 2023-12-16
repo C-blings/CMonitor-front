@@ -1,19 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import LabelPanel from "./ui/components/label_panel";
+import Input from "./ui/moleculas/input";
+import SearchBar from "./ui/components/search_bar";
+import Button from "./ui/moleculas/button";
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+      <LabelPanel/>
+      <div style={{display: "flex", justifyContent: "space-between"}}>
+          <div style={{float: "left"}}>
+              <SearchBar/>
+          </div>
+
+          <div style={{float: "right"}}>
+              <Button text="Add project" onClick={() => {}}/>
+          </div>
+      </div>
+
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
