@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {FormEventHandler} from 'react';
 
-const Input = ({placeholder} : {placeholder: string}) => {
-    return <input placeholder={placeholder}/>
+const Input = ({placeholder, onChange} : {placeholder: string, onChange: FormEventHandler<HTMLInputElement>}) => {
+    return <input placeholder={placeholder} onChange={onChange}/>
 }
 
 export default Input;

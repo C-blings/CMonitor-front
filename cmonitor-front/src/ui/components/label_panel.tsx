@@ -1,18 +1,12 @@
 import React from 'react'
-import styled from 'styled-components';
+import {Label, Panel} from "../styles/components/label_panel_styles";
+import Button from "../moleculas/button";
 
-const Label = styled.h1`
-  font-family: Magneto,serif;
-  padding-left: 20px;
-`
-
-const Panel = styled.div`
-  border: solid black 1px;
-`
 
 function LabelPanel() {
     return <Panel>
         <Label>CMonitoring</Label>
+        <Button text="Add project" onClick={() => {}}/>
     </Panel>
 }
 
