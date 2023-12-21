@@ -4,10 +4,13 @@ import Button from "../moleculas/button";
 
 
 function LabelPanel() {
-    return <Panel>
-        <Label>CMonitoring</Label>
-        <Button text="Add project" onClick={() => {}}/>
-    </Panel>
+    return <>
+        <Panel>
+            <Label>CMonitoring</Label>
+            <Button text="Add project" onClick={() => {}}/>
+        </Panel>
+
+    </>
 }
 
 export default LabelPanel;

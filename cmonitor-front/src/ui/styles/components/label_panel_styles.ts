@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
-export const Label = styled.h1`
+export const Label = styled.p`
   font-family: Magneto,serif;
-  padding-left: 20px;
+  margin-left: 20px;
+  font-size: 40px;
 `
 
 export const Panel = styled.div`
-  border: solid black 1px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px gray;
+  display: flex;
+  align-items: center;
 `
 

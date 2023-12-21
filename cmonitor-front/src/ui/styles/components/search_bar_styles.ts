@@ -8,9 +8,10 @@ export const LogPanel = styled.div`
 `
 
 export const LogPanelBackground = styled.div`
-  background: aqua;
+  background: floralwhite;
+  border-radius: 5px;
   margin-top: 10px;
-  width: 100vw;
+  box-shadow: 2px 4px 10px gray;
 `
 
 export const LogText = styled.p`

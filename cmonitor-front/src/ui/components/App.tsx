@@ -7,8 +7,9 @@ import {Log} from "../../repositories/LogsRepository";
 export const  App = () => {
     let [logs, setLogs] = useState<Log[]>([])
 
-    return <><LabelPanel/>
+    return <>
         <div>
+            <LabelPanel/>
             <SearchBar setLogs={setLogs}/>
 
             {logs.map(log => {
