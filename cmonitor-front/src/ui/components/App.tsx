@@ -4,8 +4,8 @@ import {LogPanel, LogPanelBackground, LogText} from "../styles/components/search
 import React, {useState} from "react";
 import {Log} from "../../repositories/LogsRepository";
 
-export const  App = () => {
-    let [logs, setLogs] = useState<Log[]>([])
+export const App = () => {
+    let [logs, setLogs] = useState<[]>([])
 
     return <>
         <div>
@@ -13,9 +13,14 @@ export const  App = () => {
             <SearchBar setLogs={setLogs}/>
 
             {logs.map(log => {
+                let properties = Object.getOwnPropertyNames(log);
                 return <LogPanelBackground>
                     <LogPanel>
-                        <LogText>{log.dateTime} {log.text}</LogText>
+                        {
+                            properties.map( prop => {
+                                return <LogText>{prop}: {log[prop]}</LogText>;
+                            })
+                        }
                     </LogPanel>
                 </LogPanelBackground>;
             })}
