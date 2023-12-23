@@ -1,8 +1,7 @@
 import LabelPanel from "./label_panel";
 import SearchBar from "./search_bar";
-import {LogPanel, LogPanelBackground, LogText} from "../styles/components/search_bar_styles";
 import React, {useState} from "react";
-import {Log} from "../../repositories/LogsRepository";
+import {LogPanel, LogPanelBackground, LogText} from "../styles/components/log_styles";
 
 export const App = () => {
     let [logs, setLogs] = useState<[]>([])
@@ -14,7 +13,8 @@ export const App = () => {
 
             {logs.map(log => {
                 let properties = Object.getOwnPropertyNames(log);
-                return <LogPanelBackground>
+                return <div>
+                    <LogPanelBackground>
                     <LogPanel>
                         {
                             properties.map( prop => {
@@ -22,7 +22,7 @@ export const App = () => {
                             })
                         }
                     </LogPanel>
-                </LogPanelBackground>;
+                    </LogPanelBackground></div>;
             })}
         </div>
     </>
