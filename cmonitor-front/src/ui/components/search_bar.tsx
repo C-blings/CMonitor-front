@@ -10,7 +10,9 @@ const SearchBar = ({setLogs}: {setLogs: Function}) => {
     let [projectName, setProjectName] = useState<Project>()
     let [projects, setProjects] = useState<Project[]>([]);
 
-    GetProjects().then(data => setProjects(data.data));
+    if (projects.length == 0){
+        GetProjects().then(data => setProjects(data.data));
+    }
 
     const changeProjects = (event: ChangeEvent<HTMLSelectElement>) => {
         setProjectName({projectName: event.currentTarget.value});
@@ -21,7 +23,7 @@ const SearchBar = ({setLogs}: {setLogs: Function}) => {
             <Select projects={projects} onChange={changeProjects}/>
             <Input placeholder="log parameters" onChange={() => {}}/>
             <Button text="Search" onClick={async () => {
-                if (projectName) {
+                if (projectName && projectName.projectName.length != 0) {
                     await GetLogs(projectName.projectName).then(data => {
                         setLogs(data.data);
                     });
